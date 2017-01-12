@@ -1,0 +1,188 @@
+package study;
+
+public class study2{
+
+	
+	public static void main(String []args){
+	
+	}
+
+}
+/** 일반메소드 vs 정적 메소드
+ *  정적 메소드 
+ *  static이라는 키워드를 사용시 클래스의 인스턴스 없이 메소드를 실행 가능.
+ *  정적 메소드를 호출 할 때, 클래스 명을 사용 Math.round()
+ *  정적변수가 아닌 인스턴스변수를 사용할 수 없음.(정적 메소드에서는 인스턴스 변수의 상태를 보지못함.)
+ *  정적 메소드가 아닌 메소드를 사용할 수 없음.
+ *  ex/ public static int min(int i, int j){ int result = 0;  if(i>j){result = j}else{result =  i}    return result;}
+ *  
+ *  일반 메소드
+ *  일반 메소드를 호출 할 때, 레퍼런스 변수명을 사용 Song s = new Song();  s.play();
+ *  pubilc class Song{
+ *    String title= ""; 
+ *    public Song(String t){
+ *      title = t;
+ *    }
+ *   
+ *   public void play(){
+ *   	Sound  s = new Sound();
+ *   s.playSound(title);
+ *   }
+ *  }
+ */
+
+/** 정적변수, 인스턴스 변수.
+ * 정적 변수
+   - 클래스의 어떤 인스턴스에서든 값이 같음.
+   - 정적 변수는 공유됨
+   - 같은 클래스에 속하는 모든 인스턴스에서 그 정적변수의 하나뿐인 복사본을 공유하는것.
+   - 한 클래스마다 하나씩.
+   - 클래스가 로딩될 때(JVM에서 로딩할 때가 되었다고 결정할 때.) 초기화됨.
+     + 그 클래스에 속하는 객체가 생성 되기전에 초기화
+     + 그 클래스에 속하는 정적 메소드가 실행되기 전에 초기화. 
+ * 인스턴스 변수
+- 인스턴스마다 하나씩.
+ */
+
+/** FINAL
+ * 변수를 final로 지정하면 그 값은 변경할 수 없음.
+ * 메소드를 final로 지정하면 그 메소드를 오버라이드 할 수 없음.
+ * 클래스를 final로 지정하면 그 클래스를 확장 할 수 없음. (즉, 하위클래스를 만들수 없음.) 
+ * 
+ * static final로 선언된 변수는 상수이다. 
+ * final로 지정된 정적 변수를 초기화 하는 방법
+ * 1. 선언할때 초기화 하는 방법.
+ * public static final int Foo_X = 25;
+ * 2. 정적 초기화 부분에서 초기화 하는 방법
+ * public class Bar{
+ *   public static final int Foo_X;
+ *   
+ *   static{
+ *   	Foo_X = Math.round(Math.ramdom());
+ *   }
+ *}
+ */ 
+
+/** 9장 정리
+ * 정적 메소드는 힙에 그 메소드가 들어있는 클래스의 인스턴스가 없어도 호출할 수 있다.
+ * 특정 인스턴스 변수값에 의존하지 않는 유틸리티 메소드는 정적 메소드로 만드는 것이 좋다.
+ * 정적메소드에서는 특정인스턴스와는 연관되지 않기때문에 어떤 인스턴스변수값도 사용할 수 없다. 어떤 인스턴스에 들어있는 인스턴스 변수값을 사용해야할지 못찾기 때문.
+ * 정적메소드만 들어있는 클래스가 있다면 그 클래스의 인스턴스를 만들 필요가 없기 때문에 생성자를 private로 만드는 것이 좋다.
+ * 상수의 이름은 (final로 지정한 정적 변수)일반적으로 대문자로 명명.
+ */
+
+/** 오토박싱
+ * 원시값과 래퍼객체사이의 변환을 자동으로 처리해주는 기능
+ */
+
+/** fotmatting
+*	String s = String.format("%, d", 100000000); // 100,000,000
+*	String s = String.format("%, 2f", 45678); // 456.78
+*	String s = String.format("%, .2f", 476578.09876); // 476,578.10
+*	Calendar c = Calendar.getInstance();
+*    
+ */
+
+/** 11장 정리
+ * 실행중에 문제가 생기면 메소드에 예외를 던질수 있다.
+ * 예외는 언제나 Exception 유형의 객체이다.
+ * RuntimeException 유형에 속하는 예외에 대해서는 컴파일러에서 신경을 쓰지 x
+ * RuntimeException은 선언하지 않아도 되고 try/catch/로 포장할 필요도 없음.
+ * 컴파일러에서 항상 확인하는 Exception유형을 '홛인예외'라고 하는데 정확하게 말하자면 '컴파일러에서 확인하는 예외'라고 할수 있다. 확인하지 않는것은RuntimeException뿐.  
+ * 모든 예외에 대해서는 정해진 규칙에 따라 적절한 코드를 사용
+ * 확인 예외를 던질수 있는 메소드를 선언할 때는 반드시 throws Exception선언문을 사용하여 예외를 던질수있다는 사실을 공표
+ * 확인예외를 던지는 메소드를 호출할때는 반드시 정해진 규칙을 준수.
+ * 예외처리할 준비가 되어있다면 예외를 던지는 메소드를 호출하는 코드를 try/catch로 감싸야하며 예외처리/복구코드는 catch블록안에 넣어야함.
+ */
+
+/** 12장 정리
+ 
+ * GUI를 만들때 보통 JFrame을 사용 ( JFrame frame = new JFrame(); )
+ * JFrame에 위젯을 추가하고자 할 경우 frame.getContentPane().add(button)
+ * 다른 대부분의 요소와는 달리 JFrame에는 다른 위젯을 직접 추가할수 없고, 반드시 JFrame의 내용틀(content pane)에 추가
+ * 창을 화면에 나타나게 하고자 할경우 , 크기지정 후 화면에 나타나게 설정
+ * frame.setSize(300, 300);
+ * frame.setVisible(true)
+ * 리스너 인터페이스는 이벤트 소스에서 이벤트를 받아서처리하는 메소드를 호출할수 있는 방법을 제공, 그 인터페이스에는 이벤트가 일어났을때, 이벤트 소스에서 호출하는 메소드가 정의되어있다.
+ * ----------
+import javax.swing.*;
+import java.awt.event.*;
+
+public class study2 implements ActionListener{
+	JButton btn;
+	
+	public static void main(String []args){
+		
+		study2 s = new study2();
+		s.go();
+	}
+	public void go(){
+		JFrame frame = new JFrame();
+		btn = new JButton("hi");
+		
+		btn.addActionListener(this);
+		
+		frame.getContentPane().add(btn);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(300, 300);
+		frame.setVisible(true);
+		
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		btn.setText("bye");
+	}
+}
+ * ---------
+ */
+
+/** 내부클래스(inner class)
+- 클래스 내에 선언된 클래스이다.
+- 특정 클래스 내에서만 주로 사용되는 클래스를 내부 클래스로 선언한다.
+- 내부 클래스에서 외부 클래스의 멤버들을 쉽게 접근할 수 있다.
+- 코드의 복잡성을 줄일 수 있다.(캡슐화)
+
+public class Outer {
+    class InstanceInner {} // Instance 클래스
+    static class StaticInner {} // static 클래스
+     
+    void myMethod() {
+        class LocalInner {} // local 클래스
+    } // myMethod
+} // Outer
+
+2. 내부클래스 종류와 특징
+- 내부 클래스의 종류는 변수의 선언위치에 따른 종류와 동일하다.
+- 유효범위와 성질도 변수와 유사하므로 비교해보면 이해하기 쉽다.
+- 인스턴스 클래스 (instance class)
+- 외부 클래스의 멤버변수 선언위치에 선언, 인스턴스 멤버처럼 다루어진다.
+- 주로 외부 클래스의 인스턴스 멤버들과 관련된 작업에 사용될 목적으로 선언된다.
+- 스태틱 클래스 (static class)
+- 외부 클래스의 멤버변수 선언위치에 선언, static 멤버처럼 다루어진다.
+- 주로 외부클래스의 static멤버, 특히 static 메서드에서 사용될 목적으로 선언된다.
+- 지역 클래스 (local class)
+- 외부 클래스의 메서드나 초기화블럭 안에 선언, 선언된 영역 내부에서만 사용될 수 있다.
+- 익명 클래스 (anonymous class)
+- 클래스의 선언과 객체의 생성을 동시에하는 이름없는 클래스(일회용)
+
+3.내부클래스 제어자 & 접근성
+- 내부클래스의 접근제어자는 변수에 사용할 수 있는 접근제어자와 동일하다.
+- static 클래스만 static 멤버를 정의할 수 있다.
+- 내부클래스도 외부클래스의 멤버로 간주되며, 동일한 접근성을 갖는다.
+- 외부클래스의 지역변수는 final이 붙은 변수(상수)만 접근 가능하다.
+- 지역클래스의 인스턴스가 소멸된 지역변수를 참조할 수 있기 때문이다.
+ */
+
+/** 레이아웃 관리자 - 다른 구성요소 안에 들어있는 구성요소의 크기와 위치를 제어하는 역할.
+ * BorderLayout - 프레임의 기본 레이아웃 관리자.
+ * 배경요소를 지역 다섯개로 나뉘며,(동서남북 중앙) BorderLayout관리자에 의해 제어되는 배경에는 각 지역별로 구성요소 하나씩만 넣을수 있음.
+ * 이 관리자에서 배치하는 구성요소는 일반적으로 요청한 크기대로 만들어지지 않음.
+ * FlowLayout - 패널의 기본 레이아웃 관리자.
+ * 단어가 아닌 구성요소를 배치한다는 점을 제외하면 워드 프로세서와 비슷한 식으로 작동.
+ * 각 구성요소의 크기는 그 구성요소에서 요청한대로 정해지며 추가된 순서대로, '왼쪽맞춤'형태로 왼쪽에서 오른쯕(위쪽에서 아래쪽)으로 배치.
+ * 어떤 구성요소가 수평방향으로 들어맞지 않으면 다음행에 배치.
+ * BoxLayout - FlowLayout과 비슷하지만, 각 구성요소를 추가한 다음 매번 엔터키를 눌러 강제로 줄바꿈하는 형식과 비슷함.
+ * 각 구성요소마다 요청한 크기대로 만들어질 수 있음, 또한 추가된 순서대로 배치된다는 점에서 FlowLayout과 비슷
+ * 하지만 구성요소를 수직 방향으로 쌓음.
+ */
+ 

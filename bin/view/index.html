@@ -1,0 +1,50 @@
+<html>
+	<head></head>
+	<title>webServer</title>
+	<body>
+		<div style="width: 80%; margin-left: 10% ">
+			<div>
+				<div style="width: 100%; background-color: antiquewhite; height: 15%" >
+					<h1>Hi</h1>
+				</div>
+			</div>
+			<div id="container" style="display: flex; ">
+				<div style="width: 25%; background-color: silver; height: 70%" >
+					<form id="loginFrm" method="post" action="/main.html" >
+						ID<br><input type="text" id ="id" name="id" value=""></input>
+						<br>PW<br><input type="password" id ="pw" name="pw" value=""></input>
+						<input type="button" id="loginBtn"  value="login">
+					</form>
+				</div>
+				<div style="width: 75%; background-color: lightskyblue;  height: 70%"></div> 
+			</div>
+			<div> 
+				<div style="width: 100%; background-color: antiquewhite; height: 15%" >
+					<a href="/bye.html" style=" text-decoration: none; color: black; font-weight: bold;"><span>go Bye</span></a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#loginBtn').on('click',function(){
+		var id = $("#id").val();
+		var pw = $("#pw").val();
+		
+		if(id != "aaaa"&& pw != "1111"){
+				window.alert("check your ID AND PW");
+			}else if(id != "aaaa"){
+				window.alert("check your ID");
+			}else if(pw != "1111"){
+				window.alert("check your PW");
+			}
+
+		if(id == "aaaa" && pw == "1111"){
+			$('#loginFrm').submit();
+		}
+	})
+})
+
+</script>
