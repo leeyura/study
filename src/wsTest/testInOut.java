@@ -1,4 +1,4 @@
-package study;
+package wsTest;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

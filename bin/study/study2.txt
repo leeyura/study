@@ -1,13 +1,3 @@
-package study;
-
-public class study2{
-
-	
-	public static void main(String []args){
-	
-	}
-
-}
 /** 일반메소드 vs 정적 메소드
  *  정적 메소드 
  *  static이라는 키워드를 사용시 클래스의 인스턴스 없이 메소드를 실행 가능.
@@ -185,4 +175,3 @@ public class Outer {
  * 각 구성요소마다 요청한 크기대로 만들어질 수 있음, 또한 추가된 순서대로 배치된다는 점에서 FlowLayout과 비슷
  * 하지만 구성요소를 수직 방향으로 쌓음.
  */
- 
