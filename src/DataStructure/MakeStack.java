@@ -32,21 +32,30 @@ public class MakeStack {
 	}
 }
 
-class Stack{
+class Stack {
 	int top = 0;
 	int[] stack;
 	int size;
 	
+	/**
+	 * @param size
+	 */
 	public Stack(int size){
 		top = -1;
 		stack = new int [size];
 		this.size = size;
 	}
 	
+	/**
+	 * @return
+	 */
 	public boolean empty(){
 		return  (top+1 == 0);
 	}
 	
+	/**
+	 * 
+	 */
 	public void peak (){
 		if(top == -1){
 			System.out.println("null");
@@ -55,21 +64,32 @@ class Stack{
 		}
 	}
 	
+	/**
+	 * @param value
+	 */
 	public void push(int value){
 		stack[++top] = value;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public int pop(){
 		return stack[top--];
 	}
 	
+	/**
+	 * @param value
+	 * @return
+	 */
 	public int search(int value){
 		int result = 0;
 		for(int i = 0; i<stack.length; i++){
 			if(stack[i] == value){
-				result = size - i;
+				result = (top - 1)+1;
+//				result = size - i;
 			}
-			result = (top - 1)+1;
 		}
 		return result;
 	}

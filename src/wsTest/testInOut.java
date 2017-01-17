@@ -16,9 +16,12 @@ public class testInOut {
 	        DataOutputStream dos = null;
 	        
 	        try{
+	            // "StreamFile.out" 파일을 출력하는 객체를 생성한다.
+ 	            // DataOutputStream Filter를 적용한다.
 	            fos = new FileOutputStream("StreamFile.out");
 	            dos = new DataOutputStream(fos);
 	            
+	            // "StreamFile.out" 파일에 각 기본형 데이터를 출력한다.
 	            dos.writeBoolean(false);
 	            dos.writeByte(Byte.MAX_VALUE);
 	            dos.writeDouble(Double.MAX_VALUE);
@@ -26,9 +29,11 @@ public class testInOut {
 	            dos.writeLong(Long.MAX_VALUE);
 	            dos.writeShort(Short.MAX_VALUE);
 	            
+	             // "StreamFile.out" 파일을 읽는 객체를 생성한다.
+	             // DataInputStream Filter를 적용한다.
 	            fis = new FileInputStream("StreamFile.out");
 	            dis = new DataInputStream(fis);
-	            
+	            // "StreamFile.out" 파일에서 각 기본형 데이터를 읽어온다.
 	            System.out.println(dis.readBoolean());
 	            System.out.println(dis.readByte());
 	            System.out.println(dis.readDouble());

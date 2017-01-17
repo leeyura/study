@@ -30,7 +30,7 @@ public class StaticDemo {
     int memberint;            //member 변수
     String memberstr;        //member 변수
     static void view(){
-        System.out.println("static view ȣ��: " + staticint );
+        System.out.println("static view 호출: " + staticint );
     }
     public static void main(String[] args) {
         StaticDemo.staticint++; 
