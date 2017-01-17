@@ -24,7 +24,6 @@ public class testClient {
 			
 			while(true){
 				System.out.println(dis.readUTF());
-				System.out.println("연결 종료");
 			}
 			
 			

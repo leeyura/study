@@ -10,7 +10,7 @@ public class MakeStack2 {
 		st2.peak();
 		st2.pop();
 		st2.peak();
-		/*   °á°ú
+		/*   ê²°ê³¼
 			peak : hi
 			peak : 15
 			peak : hi

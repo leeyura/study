@@ -18,7 +18,7 @@ public class MakeStack {
 		st.peak();
 		st.pop();
 		System.out.println("empty : " + st.empty());
-		/*   °á°ú
+		/*  ê²°ê³¼
 			empty : true
 			peak =10
 			peak =20

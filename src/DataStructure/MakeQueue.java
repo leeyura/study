@@ -13,7 +13,7 @@ public class MakeQueue {
 		qu.peak();
 		qu.poll();
 		qu.peak();
-		/*   °á°ú
+		/*   ê²°ê³¼
 		    peak :  null
 			peak : 0
 			peak : 10

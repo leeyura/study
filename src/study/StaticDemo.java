@@ -1,51 +1,51 @@
 package study;
 
 /*public class StaticDemo {
-    static int staticint;        //static º¯¼ö
-    int memberint;            //member º¯¼ö
-    String memberstr;        //member º¯¼ö
+    static int staticint;        //static ë³€ìˆ˜
+    int memberint;            //member ë³€ìˆ˜
+    String memberstr;        //member ë³€ìˆ˜
 
     public static void main(String[] args) {
         StaticDemo sd1 = new StaticDemo();
         sd1.memberint++; 
         sd1.memberstr="SD1";
         StaticDemo.staticint++;
-        System.out.println("¸â¹öÀÌ¸§:" + sd1.memberstr
-        							+ ", ¸â¹öÁ¤¼ö:" + sd1.memberint
-    								+ ", ½ºÅÂÆ½Á¤¼ö:" + StaticDemo.staticint);
+        System.out.println("ë©¤ë²„ì´ë¦„ :" + sd1.memberstr
+        							+ ", ë©¤ë²„ì •ìˆ˜ :" + sd1.memberint
+    								+ ", static ì •ìˆ˜ :" + StaticDemo.staticint);
         
         
         StaticDemo sd2 = new StaticDemo();
         sd2.memberint++; 
         sd2.memberstr="SD2";
         StaticDemo.staticint++;
-        System.out.println("¸â¹öÀÌ¸§:" + sd2.memberstr
-                					+ ", ¸â¹öÁ¤¼ö:" + sd2.memberint
-                					+ ", ½ºÅÂÆ½Á¤¼ö:" + StaticDemo.staticint);
+        System.out.println("ë©¤ë²„ì´ë¦„ :" + sd2.memberstr
+                					+ ",ë©¤ë²„ì •ìˆ˜ : " + sd2.memberint
+                					+ ", static ì •ìˆ˜:" + StaticDemo.staticint);
     }
 }*/
 
 public class StaticDemo {
-    static int staticint;        //static º¯¼ö
-    int memberint;            //member º¯¼ö
-    String memberstr;        //member º¯¼ö
+    static int staticint;        //static ë³€ìˆ˜
+    int memberint;            //member ë³€ìˆ˜
+    String memberstr;        //member ë³€ìˆ˜
     static void view(){
-        System.out.println("static view È£Ãâ: " + staticint );
+        System.out.println("static view È£ï¿½ï¿½: " + staticint );
     }
     public static void main(String[] args) {
         StaticDemo.staticint++; 
-        StaticDemo.view();                       //  static view È£Ãâ: 1
+        StaticDemo.view();                       //  static view ë³€ìˆ˜ : 1
         StaticDemo sd1 = new StaticDemo();
         sd1.memberint++; 
         sd1.memberstr="SD1";
         StaticDemo.staticint++; 
-        StaticDemo.view();                       //  static view È£Ãâ: 2
-        System.out.println("¸â¹öÀÌ¸§:" + sd1.memberstr
-        							+ ", ¸â¹öÁ¤¼ö:" + sd1.memberint
-        							+ ", ½ºÅÂÆ½Á¤¼ö:" + StaticDemo.staticint);
+        StaticDemo.view();                       //  static view ë³€ìˆ˜ : 2
+        System.out.println("ë©¤ë²„ì´ë¦„ :" + sd1.memberstr
+        							+ ",ë©¤ë²„ì •ìˆ˜ :" + sd1.memberint
+        							+ ", static ì •ìˆ˜ :" + StaticDemo.staticint);
         
         StaticDemo.staticint++; 
-        StaticDemo.view();                      //  static view È£Ãâ: 3
+        StaticDemo.view();                      //  static view ë³€ìˆ˜ : 3
     }
 }
 
