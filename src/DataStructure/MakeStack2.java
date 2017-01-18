@@ -1,5 +1,8 @@
 package DataStructure;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author yul
  */
@@ -21,24 +24,28 @@ public class MakeStack2 {
 
 class Stack2<T> {
 	int top = 0;
-	Object[] stack;
+//	Object[] stack;
+	private List<T> stack;
 	int size;
 
 	public Stack2(int size) {
 		top = -1;
-		stack = new Object[size];
+		stack = new ArrayList<T>(size);
 		this.size = size;
 	}
 
 	public void peak() {
-		System.out.println("peak : " + stack[top]);
+		System.out.println("peak : " + stack.get(top));
 	}
 
 	public void push(T value) {
-		stack[++top] = value;
+		stack.add(value);
+		top++;
 	}
 
-	public Object pop() {
-		return stack[top--];
+	public T pop() {
+		T data = stack.remove(top);
+		top--;
+		return data;
 	}
 }

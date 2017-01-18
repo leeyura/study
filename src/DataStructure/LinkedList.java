@@ -9,7 +9,7 @@ public class LinkedList<T> {
 	private int size = 0;
 
 	private class Node {
-		private Object data;
+		private T data;
 		private Node next;
 
 		/**
@@ -95,12 +95,12 @@ public class LinkedList<T> {
 	 * 
 	 * @return removeData
 	 */
-	public Object removeFirst() {
-		Node temp = head;
-		head = temp.next;
-		Object removeData = temp.data;
-		temp = null;
+	public T removeFirst() {
+		Node tempNode = head;
+		head = tempNode.next;
+		T removeData = tempNode.data;
+		tempNode = null;
 		size--;
-		return removeData;
+		return  removeData;
 	}
 }
