@@ -1,5 +1,9 @@
 package DataStructure;
 
+/**
+ * @author lee
+ *
+ */
 public class LinkedList {
 	private Node head;
 	private Node tail;
@@ -9,6 +13,11 @@ public class LinkedList {
 		private Object data;
 		private Node next;
 
+		/**
+		 * Node 생성.
+		 * 
+		 * @param inputData
+		 */
 		public Node(Object inputData) {
 			this.data = inputData;
 			this.next = null;
@@ -20,6 +29,11 @@ public class LinkedList {
 
 	}
 
+	/**
+	 * 첫번째로 node를 추가.
+	 * 
+	 * @param inputData
+	 */
 	public void addFirst(Object inputData) {
 		Node newNode = new Node(inputData);
 		newNode.next = head;
@@ -30,6 +44,11 @@ public class LinkedList {
 		}
 	}
 
+	/**
+	 * 마지막으로 node를 추가.
+	 * 
+	 * @param inputData
+	 */
 	public void addLast(Object inputData) {
 		Node newNode = new Node(inputData);
 		if (size == 0) {
@@ -41,35 +60,48 @@ public class LinkedList {
 		}
 	}
 
+	/**
+	 * node의 값들을 [] 안의 String형태로 나타냄. return nodeValue
+	 */
 	public String toString() {
 		if (head == null) {
 			return "[]";
 		}
 		Node temp = head;
-		String str = "[";
+		String nodeValue = "[";
 		while (temp.next != null) {
-			str += temp.data + ",";
+			nodeValue += temp.data + ",";
 			temp = temp.next;
 		}
-		str += temp.data;
-		return str + "]";
+		nodeValue += temp.data;
+		return nodeValue + "]";
 	}
 
+	/**
+	 * 해당 인덱스의 노드값을 반환.
+	 * 
+	 * @param idx
+	 * @return node
+	 */
 	public Node get(int idx) {
-		Node x = head;
+		Node node = head;
 		for (int i = 0; i < idx; i++) {
-			x = x.next;
+			node = node.next;
 		}
-		return x;
+		return node;
 	}
 
+	/**
+	 * 첫번쨰 head가 가르키는 요소를 제거.
+	 * 
+	 * @return removeData
+	 */
 	public Object removeFirst() {
 		Node temp = head;
 		head = temp.next;
-		Object returnData = temp.data;
+		Object removeData = temp.data;
 		temp = null;
 		size--;
-		return returnData;
+		return removeData;
 	}
-
 }

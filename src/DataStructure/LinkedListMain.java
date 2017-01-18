@@ -1,7 +1,7 @@
 package DataStructure;
 
 public class LinkedListMain {
-	public static void main(String [] args){
+	public static void main(String[] args) {
 		LinkedList linkedList = new LinkedList();
 		linkedList.addFirst(30);
 		linkedList.addFirst(20);
@@ -10,6 +10,6 @@ public class LinkedListMain {
 		linkedList.addLast(50);
 		System.out.println(linkedList.get(4));
 		linkedList.removeFirst();
-		System.out.println("linkedList : "+ linkedList.toString());
+		System.out.println("linkedList : " + linkedList.toString());
 	}
 }
