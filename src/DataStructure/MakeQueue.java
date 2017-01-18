@@ -1,5 +1,8 @@
 package DataStructure;
 
+/**
+ * @author yul
+ */
 public class MakeQueue {
 	public static void main(String[] args) {
 		Queue qu = new Queue(50);

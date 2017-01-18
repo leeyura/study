@@ -2,7 +2,7 @@ package DataStructure;
 
 public class LinkedListMain {
 	public static void main(String[] args) {
-		LinkedList linkedList = new LinkedList();
+		LinkedList<Integer> linkedList = new LinkedList<Integer>();
 		linkedList.addFirst(30);
 		linkedList.addFirst(20);
 		linkedList.addFirst(10);

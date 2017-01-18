@@ -1,12 +1,15 @@
 package DataStructure;
 
+/**
+ * @author yul
+ */
 public class MakeStack2 {
 	public static void main(String[] args) {
 
-		Stack2 st2 = new Stack2(25);
+		Stack2<String> st2 = new Stack2<String>(25);
 		st2.push("hi");
 		st2.peak();
-		st2.push(15);
+		st2.push("15");
 		st2.peak();
 		st2.pop();
 		st2.peak();
@@ -16,13 +19,13 @@ public class MakeStack2 {
 	}
 }
 
-class Stack2 {
+class Stack2<T> {
 	int top = 0;
 	Object[] stack;
 	int size;
 
 	public Stack2(int size) {
-		top = 0;
+		top = -1;
 		stack = new Object[size];
 		this.size = size;
 	}
@@ -31,7 +34,7 @@ class Stack2 {
 		System.out.println("peak : " + stack[top]);
 	}
 
-	public void push(Object value) {
+	public void push(T value) {
 		stack[++top] = value;
 	}
 

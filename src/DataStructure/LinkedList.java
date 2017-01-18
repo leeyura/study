@@ -1,10 +1,9 @@
 package DataStructure;
 
 /**
- * @author lee
- *
+ * @author yul
  */
-public class LinkedList {
+public class LinkedList<T> {
 	private Node head;
 	private Node tail;
 	private int size = 0;
@@ -18,7 +17,7 @@ public class LinkedList {
 		 * 
 		 * @param inputData
 		 */
-		public Node(Object inputData) {
+		public Node(T inputData) {
 			this.data = inputData;
 			this.next = null;
 		}
@@ -34,7 +33,7 @@ public class LinkedList {
 	 * 
 	 * @param inputData
 	 */
-	public void addFirst(Object inputData) {
+	public void addFirst(T inputData) {
 		Node newNode = new Node(inputData);
 		newNode.next = head;
 		head = newNode;
@@ -49,7 +48,7 @@ public class LinkedList {
 	 * 
 	 * @param inputData
 	 */
-	public void addLast(Object inputData) {
+	public void addLast(T inputData) {
 		Node newNode = new Node(inputData);
 		if (size == 0) {
 			addFirst(inputData);
